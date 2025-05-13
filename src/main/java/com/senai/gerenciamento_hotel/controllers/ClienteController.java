@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cliente")
+@RequestMapping("/api/cliente") // Corrigido o caminho base
 public class ClienteController {
 
     @Autowired
@@ -42,8 +42,8 @@ public class ClienteController {
 
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCliente(@PathVariable Long id) {
         clienteService.deleteCliente(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Cliente foi deletado com sucesso!");
     }
 }

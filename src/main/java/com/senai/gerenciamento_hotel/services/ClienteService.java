@@ -52,9 +52,6 @@ public class ClienteService {
 
     @Transactional
     public void deleteCliente(Long id) {
-        if (!clienteRepository.existsById(id)) {
-            throw new RuntimeException("Cliente não encontrado com o ID: " + id);
-        }
         clienteRepository.deleteById(id);
     }
 

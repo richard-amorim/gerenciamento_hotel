@@ -40,8 +40,8 @@ public class ReservaService {
 
     @Transactional
     public ClienteDTO updateCliente(Long id, ClienteDTO clienteDTO) {
-        Cliente cliente = clienteRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com o ID: " + id));
+        Cliente cliente = clienteRepository.findById(id).
+                orElseThrow(() -> new RuntimeException("Cliente não encontrado com o ID: " + id));
         cliente.setNome(clienteDTO.getNome());
         cliente.setEmail(clienteDTO.getEmail());
         cliente.setTelefone(clienteDTO.getTelefone());
@@ -52,9 +52,6 @@ public class ReservaService {
 
     @Transactional
     public void deleteCliente(Long id) {
-        if (!clienteRepository.existsById(id)) {
-            throw new RuntimeException("Cliente não encontrado com o ID: " + id);
-        }
         clienteRepository.deleteById(id);
     }
 
