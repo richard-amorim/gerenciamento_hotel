@@ -1,6 +1,7 @@
 package com.senai.gerenciamento_hotel.dtos;
 
 public class ClienteDTO {
+
     private Long id;
     private String nome;
     private String cpf;
@@ -11,7 +12,19 @@ public class ClienteDTO {
     private String estado;
     private String cep;
 
+
+    public ClienteDTO(Long id, String nome, String email, String telefone, String endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+    public ClienteDTO() {
+    }
+
     public ClienteDTO(Long id, String nome, String cpf, String telefone, String email, String endereco, String cidade, String estado, String cep) {
+
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -21,12 +34,6 @@ public class ClienteDTO {
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
-    }
-
-    public ClienteDTO() {
-    }
-
-    public ClienteDTO(Long id, String nome, String email, String telefone, String endereco) {
     }
 
     public Long getId() {

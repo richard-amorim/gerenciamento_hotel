@@ -28,7 +28,7 @@ public class ClienteController {
         return ResponseEntity.ok(clienteDTO);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/all")
     public ResponseEntity<List<ClienteDTO>> getAllClientes() {
         List<ClienteDTO> list = clienteService.findByAll();
         return ResponseEntity.ok(list);

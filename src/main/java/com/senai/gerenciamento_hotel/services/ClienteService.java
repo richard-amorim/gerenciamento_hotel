@@ -68,6 +68,10 @@ public class ClienteService {
     }
 
     private ClienteDTO convertToDTO(Cliente cliente) {
-        return new ClienteDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getTelefone(), cliente.getEndereco());
+        return new ClienteDTO(cliente.getId(),
+                cliente.getNome(),
+                cliente.getEmail(),
+                cliente.getTelefone(),
+                cliente.getEndereco());
     }
 }

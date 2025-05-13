@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cliente")
+@RequestMapping("/api/reserva") // Corrigido o caminho base
 public class ReservaController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class ReservaController {
         return ResponseEntity.ok(clienteDTO);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/all")
     public ResponseEntity<List<ClienteDTO>> getAllClientes() {
         List<ClienteDTO> list = clienteService.findByAll();
         return ResponseEntity.ok(list);
@@ -40,10 +40,10 @@ public class ReservaController {
         return ResponseEntity.ok(cliente);
     }
 
-
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
         clienteService.deleteCliente(id);
         return ResponseEntity.noContent().build();
     }
+
 }
